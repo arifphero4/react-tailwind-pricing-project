@@ -1,8 +1,9 @@
-import React from "react";
+import React, { useState } from "react";
 import Links from "../Links/Links";
-import { MenuIcon } from "@heroicons/react/solid";
+import { MenuIcon, XIcon } from "@heroicons/react/solid";
 
 const Navbar = () => {
+  const [open, setOpen] = useState(false);
   const routes = [
     { id: 1, name: "Home", link: "/home" },
     { id: 2, name: "Shop", link: "/shop" },
@@ -12,11 +13,16 @@ const Navbar = () => {
   ];
   return (
     <div>
-      <div>
-        <MenuIcon></MenuIcon>
+      <div onClick={() => setOpen(!open)} className="w-6 h-6 md:hidden">
+        {open ? <XIcon></XIcon> : <MenuIcon></MenuIcon>}
       </div>
       <nav>
-        <ul className="md:flex justify-center">
+        <ul
+          className={`md:flex justify-center absolute duration-500 ease-in ${
+            open ? "top-6" : "top-[-120px]"
+          }
+          }`}
+        >
           {routes.map((route) => (
             <Links key={route.id} route={route}></Links>
           ))}
