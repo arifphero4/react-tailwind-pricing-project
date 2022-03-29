@@ -1,3 +1,4 @@
+import { ArrowRightIcon } from "@heroicons/react/solid";
 import React from "react";
 import Benefit from "../Benefit/Benefit";
 
@@ -16,6 +17,9 @@ const PricingOption = (props) => {
           <Benefit benefit={benefit}></Benefit>
         ))}
       </div>
+      <button className="bg-green-500 text-white flex justify-center w-full py-2 rounded mt-6 hover:bg-indigo-200 hover:text-black  ">
+        Buy Now <ArrowRightIcon className="w-6 h-6 ml-2 "></ArrowRightIcon>
+      </button>
     </div>
   );
 };
