@@ -1,7 +1,14 @@
 import React from "react";
 
-const Links = () => {
-  return <div></div>;
+const Links = (props) => {
+  const { name, link } = props.route;
+  return (
+    <div>
+      <li>
+        <a href={link}>{name}</a>
+      </li>
+    </div>
+  );
 };
 
 export default Links;
