@@ -1,5 +1,6 @@
 import React from "react";
 import Links from "../Links/Links";
+import { MenuIcon } from "@heroicons/react/solid";
 
 const Navbar = () => {
   const routes = [
@@ -11,8 +12,11 @@ const Navbar = () => {
   ];
   return (
     <div>
+      <div>
+        <MenuIcon></MenuIcon>
+      </div>
       <nav>
-        <ul>
+        <ul className="md:flex justify-center">
           {routes.map((route) => (
             <Links key={route.id} route={route}></Links>
           ))}
